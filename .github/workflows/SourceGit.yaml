@@ -3,7 +3,8 @@ name: Claim EpicGames from SourceGit
 on:
   workflow_dispatch:
   schedule:
-    - cron: "12 22 * * *"
+    - cron: "05 12 * * *"
+    - cron: "23 18 * * *"
 
 jobs:
   setup:
