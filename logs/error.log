@@ -1,4 +1,4 @@
-2024-06-12 20:32:21 | ERROR    | hcaptcha_challenger.agents.playwright.control:handler:153 | 'utf-8' codec can't decode byte 0xd7 in position 11: invalid continuation byte - {}
+2024-06-13 02:34:30 | ERROR    | hcaptcha_challenger.agents.playwright.control:handler:153 | 'utf-8' codec can't decode byte 0xef in position 2: invalid continuation byte - {}
 Traceback (most recent call last):
   File "/home/runner/work/epicnew/epicnew/epic/src/claim.py", line 162, in <module>
     asyncio.run(run())
@@ -20,9 +20,9 @@ Traceback (most recent call last):
     return json.loads(await self.text())
   File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/playwright/_impl/_network.py", line 610, in text
     return content.decode()
-UnicodeDecodeError: 'utf-8' codec can't decode byte 0xd7 in position 11: invalid continuation byte
-2024-06-12 20:32:52 | ERROR    | hcaptcha_challenger.agents.playwright.control:execute:615 | task interrupt <backcall> - {'reason': 'Failed to obtain challenge task'}
-2024-06-12 20:33:29 | ERROR    | hcaptcha_challenger.agents.playwright.control:handler:153 | 'utf-8' codec can't decode bytes in position 2-3: invalid continuation byte - {}
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xef in position 2: invalid continuation byte
+2024-06-13 02:35:01 | ERROR    | hcaptcha_challenger.agents.playwright.control:execute:615 | task interrupt <backcall> - {'reason': 'Failed to obtain challenge task'}
+2024-06-13 02:36:44 | ERROR    | hcaptcha_challenger.agents.playwright.control:handler:153 | 'utf-8' codec can't decode byte 0x8c in position 0: invalid start byte - {}
 Traceback (most recent call last):
   File "/home/runner/work/epicnew/epicnew/epic/src/claim.py", line 162, in <module>
     asyncio.run(run())
@@ -44,32 +44,9 @@ Traceback (most recent call last):
     return json.loads(await self.text())
   File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/playwright/_impl/_network.py", line 610, in text
     return content.decode()
-UnicodeDecodeError: 'utf-8' codec can't decode bytes in position 2-3: invalid continuation byte
-2024-06-12 20:34:13 | ERROR    | hcaptcha_challenger.agents.playwright.control:execute:680 | task interrupt <backcall> - {'reason': 'Failed to obtain challenge response'}
-2024-06-12 20:34:49 | ERROR    | hcaptcha_challenger.agents.playwright.control:handler:153 | 'utf-8' codec can't decode byte 0xfe in position 0: invalid start byte - {}
-Traceback (most recent call last):
-  File "/home/runner/work/epicnew/epicnew/epic/src/claim.py", line 162, in <module>
-    asyncio.run(run())
-  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/asyncio/runners.py", line 44, in run
-    return loop.run_until_complete(main)
-  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/asyncio/base_events.py", line 636, in run_until_complete
-    self.run_forever()
-  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/asyncio/base_events.py", line 603, in run_forever
-    self._run_once()
-  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/asyncio/base_events.py", line 1909, in _run_once
-    handle._run()
-  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/asyncio/events.py", line 80, in _run
-    self._context.run(self._callback, *self._args)
-> File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/hcaptcha_challenger/agents/playwright/control.py", line 145, in handler
-    data = await response.json()
-  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/playwright/async_api/_generated.py", line 614, in json
-    return mapping.from_maybe_impl(await self._impl_obj.json())
-  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/playwright/_impl/_network.py", line 613, in json
-    return json.loads(await self.text())
-  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/playwright/_impl/_network.py", line 610, in text
-    return content.decode()
-UnicodeDecodeError: 'utf-8' codec can't decode byte 0xfe in position 0: invalid start byte
-2024-06-12 20:34:58 | ERROR    | __main__:run:158 | An error has been caught in function 'run', process 'MainProcess' (3632), thread 'MainThread' (139766135593856): - {}
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x8c in position 0: invalid start byte
+2024-06-13 02:37:15 | ERROR    | hcaptcha_challenger.agents.playwright.control:execute:615 | task interrupt <backcall> - {'reason': 'Failed to obtain challenge task'}
+2024-06-13 02:37:47 | ERROR    | __main__:run:158 | An error has been caught in function 'run', process 'MainProcess' (3648), thread 'MainThread' (140238119033728): - {}
 Traceback (most recent call last):
   File "/home/runner/work/epicnew/epicnew/epic/src/claim.py", line 162, in <module>
     asyncio.run(run())
@@ -89,33 +66,6 @@ Traceback (most recent call last):
     await self.claim_epic_games(context)
   File "/home/runner/work/epicnew/epicnew/epic/src/claim.py", line 98, in claim_epic_games
     if await epic.authorize(page):
-  File "/home/runner/work/epicnew/epicnew/epic/src/epic_games/agent.py", line 260, in authorize
-    match await self._login(page):
-  File "/home/runner/work/epicnew/epicnew/epic/src/epic_games/agent.py", line 244, in _login
-    await insert_challenge(stage="email_exists_prod")
-  File "/home/runner/work/epicnew/epicnew/epic/src/epic_games/agent.py", line 217, in insert_challenge
-    result = await self._solver.execute(window=stage)
-  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/hcaptcha_challenger/agents/playwright/control.py", line 652, in execute
-    await self._keypoint_default_challenge(frame_challenge)
-  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/hcaptcha_challenger/agents/playwright/control.py", line 359, in _keypoint_default_challenge
-    image = await locator.screenshot(path=path, type="png")
-  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/playwright/async_api/_generated.py", line 16623, in screenshot
-    await self._impl_obj.screenshot(
-  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/playwright/_impl/_locator.py", line 531, in screenshot
-    return await self._with_element(
-  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/playwright/_impl/_locator.py", line 112, in _with_element
-    return await task(
-  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/playwright/_impl/_element_handle.py", line 313, in screenshot
-    encoded_binary = await self._channel.send("screenshot", params)
-  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 59, in send
-    return await self._connection.wrap_api_call(
-  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 514, in wrap_api_call
-    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
-playwright._impl._errors.Error: Locator.screenshot: Element is not attached to the DOM
-Call log:
-taking element screenshot
-  - waiting for fonts to load...
-  - fonts loaded
-  - attempting scroll into view action
-  -   waiting for element to be stable
-
+  File "/home/runner/work/epicnew/epicnew/epic/src/epic_games/agent.py", line 269, in authorize
+    raise RuntimeError(f"Failed to flush token - agent={self.__class__.__name__}")
+RuntimeError: Failed to flush token - agent=EpicGames
